@@ -5,12 +5,13 @@ for ch in message:
     if ord(ch) in range(ord("A"), ord("Z")+1):
         pos = ord(ch) - ord("A")
         pos = (pos + offset) % 26
-        new_char = chr(pos + ord("A"))
+        ch = chr(pos + ord("A")) 
     elif ord(ch) in range(ord("a"), ord("z")):
         pos = ord(ch) - ord("a")
         pos = (pos + offset) % 26
-        new_char = chr(pos + ord("a"))
-    else:
+        ch = chr(pos + ord("a"))
+    elif ord(ch) == 32:
         encoded_message += ch
-
-    encoded_message += new_char
+    
+    encoded_message += ch
+    print(encoded_message)
