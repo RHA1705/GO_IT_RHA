@@ -10,8 +10,6 @@ for ch in message:
         pos = ord(ch) - ord("a")
         pos = (pos + offset) % 26
         ch = chr(pos + ord("a"))
-    elif ord(ch) == 32:
-        encoded_message += ch
-    
+
     encoded_message += ch
-    print(encoded_message)
+print(encoded_message)
