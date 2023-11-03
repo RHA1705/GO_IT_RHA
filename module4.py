@@ -1,11 +1,14 @@
-# grade = [2, 2, 5, 3, 3, 5, 4, 5, 4, 3, 2, 3, 5, 4, 4, 5]
+terra = [[1, 1, 5, 10], [10, 2], [1, 1, 1]]
+power = 1
 
-def split_list(grade):
-    suma = 0
-    for i in grade:
-        suma += i
-    
-    avg = suma/len(grade)
-    return avg
+def game(terra, power):
+    # total_power = power
+    for i in terra:
+        for k in i:
+            if k <= power:
+                power += k
+            else:
+                continue
+    return power
 
-print(split_list([2, 2, 5, 3, 3, 5, 4, 5, 4, 3, 2, 3, 5, 4, 4, 5]))
+print(game(terra, power))
