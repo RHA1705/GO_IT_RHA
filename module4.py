@@ -1,14 +1,11 @@
-terra = [[1, 1, 5, 10], [10, 2], [1, 1, 1]]
-power = 1
+def is_valid_password(password):
+    if len(password) != 8:
+        return False
+    
+    for i in password:
+        if ord(i) not in range(65, 90) :
+            return True
+    
+    return True
 
-def game(terra, power):
-    # total_power = power
-    for i in terra:
-        for k in i:
-            if k <= power:
-                power += k
-            else:
-                continue
-    return power
-
-print(game(terra, power))
+print(is_valid_password('RomkoH47'))
