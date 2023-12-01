@@ -33,7 +33,7 @@ while True:
         else:  
             operator = None  
         if operator is None:  
-            print(f"{user_input} is not '+' or '-' or '/' or '*'. Try again")  #
+            print(f"{user_input} is not '+' or '-' or '/' or '*'. Try again")  
         else:  
             wait_for_number = True
             
