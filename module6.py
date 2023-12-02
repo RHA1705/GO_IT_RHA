@@ -1,28 +1,23 @@
-students = [
-    {
-        "name": "Kovalchuk Oleksiy",
-        "specialty": 301,
-        "math": 175,
-        "lang": 180,
-        "eng": 155,
-    },
-    {
-        "name": "Ivanchuk Boryslav",
-        "specialty": 101,
-        "math": 135,
-        "lang": 150,
-        "eng": 165,
-    },
-    {
-        "name": "Karpenko Dmitro",
-        "specialty": 201,
-        "math": 155,
-        "lang": 175,
-        "eng": 185,
-    },
-]
+import base64
 
-def save_applicant_data(source, output):
-    
+# def get_credentials_users(path):
+#     with open(path, 'rb') as f:
+#         lines = [line.strip() for line in f.readlines()]
+#         row = []
+#         for i in lines:
+#             i = i.decode()
+#             row.append(i)
+#         return row
 
-print(save_applicant_data(students, output=None))
+dane = ['andry:uyro18890D', 'steve:oppjM13LL9e']
+
+def encode_data_to_base64(data):
+    result = []
+    for i in dane:
+        i_bytes = i.encode()
+        base64_bytes = base64.b64encode(i_bytes)
+        base64_i = base64_bytes.decode()
+        result.append(base64_i)
+    return result
+
+print(encode_data_to_base64(dane))
