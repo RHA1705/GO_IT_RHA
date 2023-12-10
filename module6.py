@@ -1,23 +1,17 @@
-import base64
+import shutil
+import os
 
-# def get_credentials_users(path):
-#     with open(path, 'rb') as f:
-#         lines = [line.strip() for line in f.readlines()]
-#         row = []
-#         for i in lines:
-#             i = i.decode()
-#             row.append(i)
-#         return row
+data_residence = {'Michel':'Canada', 'John':'USA', 'Liza':'Australia'}
 
-dane = ['andry:uyro18890D', 'steve:oppjM13LL9e']
+def create_backup(path, file_name, employee_residence):
+    with open(fr'{path}\{file_name}', 'wb') as f:
 
-def encode_data_to_base64(data):
-    result = []
-    for i in dane:
-        i_bytes = i.encode()
-        base64_bytes = base64.b64encode(i_bytes)
-        base64_i = base64_bytes.decode()
-        result.append(base64_i)
-    return result
+        for key, value in employee_residence.items():
+            line = f'{key} {value}\n'.encode()
+            f.write(line)
 
-print(encode_data_to_base64(dane))
+        archive = shutil.make_archive('backup_folder', 'zip', path)
+        result = os.getcwd()
+        return result
+
+print(create_backup('GO_IT_RHA', 'output.txt.', data_residence))
