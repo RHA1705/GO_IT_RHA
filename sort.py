@@ -1,8 +1,8 @@
 import os
 import shutil
-import re 
-import sys  
-from pathlib import Path
+import re
+import sys
+import pathlib
 
 CYRILLIC_SYMBOLS = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяєіїґ"
 TRANSLATION = ("a", "b", "v", "g", "d", "e", "e", "j", "z", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u",
@@ -31,11 +31,12 @@ def normalize(file_name):
 
 
 def sort(path):
-    list_dir = os.listdir()
+    list_dir = os.listdir(path)
     print(list_dir)
     for el in list_dir:
-        if os.path.isfile(el):
-            shutil.move(el, fr'{path}\images\{el}')
+        if os.path.isdir(el):
+            new_dir = 
+            
             
 
 # print(sort('C:\Users\ROMAN\Downloads'))
