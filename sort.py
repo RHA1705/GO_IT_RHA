@@ -34,8 +34,10 @@ def sort(path):
     list_dir = os.listdir(path)
     print(list_dir)
     for el in list_dir:
-        if os.path.isdir(el):
-            new_dir = 
+        if os.path.isdir(fr'{path}\{el}'):
+            os.chdir(fr'{path}\{el}')
+            print(os.listdir(fr'{path}\{el}'))
+            print(os.getcwd())
             
             
 
