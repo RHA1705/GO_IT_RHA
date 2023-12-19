@@ -2,7 +2,6 @@ import os
 import shutil
 import re
 import sys
-import pathlib
 
 CYRILLIC_SYMBOLS = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяєіїґ"
 TRANSLATION = ("a", "b", "v", "g", "d", "e", "e", "j", "z", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u",
@@ -34,13 +33,17 @@ def sort(path):
     list_dir = os.listdir(path)
     print(list_dir)
     for el in list_dir:
-        if os.path.isdir(fr'{path}\{el}'):
-            os.chdir(fr'{path}\{el}')
-            print(os.listdir(fr'{path}\{el}'))
-            print(os.getcwd())
-            
-            
+        file_path = os.path.join(path, el)
+        print(file_path)
+        # if os.path.isfile(file_path):
+        #     if el.endswith(file_formats['document']):
+        #         os.mkdir(f'{path}\documents')
+        #         shutil.move(file_path, os.path.join(path, 'documents'))
 
+        # if os.path.isdir(fr'{path}\{el}'):
+        #     sort(os.chdir(fr'{path}\{el}'))
+        
+            
 # print(sort('C:\Users\ROMAN\Downloads'))
 
 # def walk(path, prev_list_dir):
