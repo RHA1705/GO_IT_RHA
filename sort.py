@@ -9,11 +9,11 @@ TRANSLATION = ("a", "b", "v", "g", "d", "e", "e", "j", "z", "i", "j", "k", "l", 
 TRANS = {}
 
 file_formats = {
-    'image' : ['jpeg', 'png', 'jpg', 'svg'],
-    'video' : ['avi', 'mp4', 'mov', 'mkv'],
-    'document' : ['doc', 'docx', 'txt', 'pdf', 'xlsx', 'pptx'],
-    'music' : ['mp3', 'ogg', 'wav', 'amr'],
-    'archive' : ['zip', 'gz', 'tar']
+    'image' : ['.jpeg', '.png', '.jpg', '.svg'],
+    'video' : ['.avi', '.mp4', '.mov', '.mkv'],
+    'document' : ['.doc', '.docx', '.txt', '.pdf', '.xlsx', '.pptx'],
+    'music' : ['.mp3', '.ogg', '.wav', '.amr'],
+    'archive' : ['.zip', '.gz', '.tar']
 }
 
 # Function normalize() get input str and return str
@@ -28,13 +28,17 @@ def normalize(file_name):
     normalized_file_name = re.sub(r'[^A-Za-z0-9.]', '_', translated)
     return normalized_file_name
 
+def make_folders(path):
+    os.path.mkdirs()
 
 def sort(path):
     list_dir = os.listdir(path)
     print(list_dir)
     for el in list_dir:
-        file_path = os.path.join(path, el)
-        print(file_path)
+        item_path = os.path.join(path, el)
+        print(item_path)
+        if os.path.isdir(item_path):
+            sort(item_path)
         # if os.path.isfile(file_path):
         #     if el.endswith(file_formats['document']):
         #         os.mkdir(f'{path}\documents')
