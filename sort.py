@@ -26,10 +26,11 @@ def normalize(file_name):
     
     # Replace all not A-Za-z0-9. characters to '_'
     normalized_file_name = re.sub(r'[^A-Za-z0-9.]', '_', translated)
-    return normalized_file_name
+    new_file_name = os.rename(file_name, normalized_file_name)
+    return new_file_name
 
 def make_folders(path):
-    os.makedirs()
+    os.makedirs(path, exist_ok=True)
 
 def sort(path):
     list_dir = os.listdir(path)
@@ -40,16 +41,22 @@ def sort(path):
         if os.path.isfile(item_path):
             new_file_name = normalize(el)
             _, file_extension = os.path.splitext(new_file_name)
-            file_extension = file_extension[1:].lower()
+            file_extension = file_extension[1:]
             
             if file_extension in file_formats["document"]:
-                category = 'documents'
-                
-            category_folder = os.path.join(path, category)
-            os.makedirs(category_folder, exist_ok=True)
+                d_dir = os.makedirs(os.path.join(path, "documents"))
+                make_folders(d_dir)
+                shutil.move(item_path, os.path.join(d_dir, new_file_name))
+            elif file_extension in file_formats["image"]:
+                i_dir = os.makedirs(os.path.join(path, "images"))
+                make_folders(i_dir)
+                shutil.move(item_path, os.path.join(i_dir, new_file_name))
+
+            # category_folder = os.path.join(path, category)
+            # os.makedirs(category_folder, exist_ok=True)
             
-            new_file_path = os.path.join(category_folder, new_file_name)
-            shutil.move(item_path, new_file_path)
+            # new_file_path = os.path.join(category_folder, new_file_name)
+            # shutil.move(item_path, new_file_path)
             
         if os.path.isdir(item_path):
             sort(item_path)
@@ -58,16 +65,6 @@ def sort(path):
                 print(f"Removed empty folder: {item_path}")
             except OSError:
                 pass
-        # if os.path.isfile(file_path):
-        #     if el.endswith(file_formats['document']):
-        #         os.mkdir(f'{path}\documents')
-        #         shutil.move(file_path, os.path.join(path, 'documents'))
-
-        # if os.path.isdir(fr'{path}\{el}'):
-        #     sort(os.chdir(fr'{path}\{el}'))
-        
-            
-# print(sort('C:\Users\ROMAN\Downloads'))
 
 # def walk(path, prev_list_dir):
 #     print(prev_list_dir)
@@ -80,5 +77,6 @@ def sort(path):
 
 if __name__ == "__main__":
     folder_path = sys.argv[1]
+    make_folders(folder_path)
     sort(folder_path)
 
