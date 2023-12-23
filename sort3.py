@@ -19,8 +19,16 @@ def sort_files(directory):
     # Traverse the directory and move files to their respective folders
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
+        
+        if os.path.isdir(file_path):
+            sort_files(file_path)
+            try:
+                os.rmdir(file_path)
+                print(f"Removed empty folder: {file_path}")
+            except OSError:
+                pass
 
-        if os.path.isfile(file_path):
+        elif os.path.isfile(file_path):
             _, file_extension = os.path.splitext(filename)
             file_extension = file_extension[1:].lower()
 

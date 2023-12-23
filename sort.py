@@ -9,11 +9,11 @@ TRANSLATION = ("a", "b", "v", "g", "d", "e", "e", "j", "z", "i", "j", "k", "l", 
 TRANS = {}
 
 file_formats = {
-    'image' : ['jpeg', 'png', 'jpg', 'svg'],
-    'video' : ['avi', 'mp4', 'mov', 'mkv'],
-    'document' : ['doc', 'docx', 'txt', 'pdf', 'xlsx', 'pptx'],
-    'music' : ['mp3', 'ogg', 'wav', 'amr'],
-    'archive' : ['zip', 'gz', 'tar']
+    'images' : ['jpeg', 'png', 'jpg', 'svg'],
+    'videos' : ['avi', 'mp4', 'mov', 'mkv'],
+    'documents' : ['doc', 'docx', 'txt', 'pdf', 'xlsx', 'pptx'],
+    'musics' : ['mp3', 'ogg', 'wav', 'amr'],
+    'archives' : ['zip', 'gz', 'tar']
 }
 
 # Function normalize() get input str and return str
@@ -39,18 +39,16 @@ def sort(path):
         item_path = os.path.join(path, el)
         print(item_path)
         if os.path.isfile(item_path):
-            new_file_name = normalize(el)
-            _, file_extension = os.path.splitext(new_file_name)
-            file_extension = file_extension[1:]
+            shutil.move(item_path, os.path.join(item_path, 'document'))
             
-            if file_extension in file_formats["document"]:
-                d_dir = os.makedirs(os.path.join(path, "documents"))
-                make_folders(d_dir)
-                shutil.move(item_path, os.path.join(d_dir, new_file_name))
-            elif file_extension in file_formats["image"]:
-                i_dir = os.makedirs(os.path.join(path, "images"))
-                make_folders(i_dir)
-                shutil.move(item_path, os.path.join(i_dir, new_file_name))
+            # if file_extension in file_formats["document"]:
+            #     d_dir = os.makedirs(os.path.join(path, "documents"))
+            #     make_folders(d_dir)
+            #     shutil.move(item_path, os.path.join(d_dir, new_file_name))
+            # elif file_extension in file_formats["image"]:
+            #     i_dir = os.makedirs(os.path.join(path, "images"))
+            #     make_folders(i_dir)
+            #     shutil.move(item_path, os.path.join(i_dir, new_file_name))
 
             # category_folder = os.path.join(path, category)
             # os.makedirs(category_folder, exist_ok=True)
