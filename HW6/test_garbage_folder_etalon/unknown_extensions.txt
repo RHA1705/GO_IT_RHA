@@ -1,0 +1,9 @@
+
+bmp
+waxv
+text
+docv
+odt
+txx
+mox
+pptxx
