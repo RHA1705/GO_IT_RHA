@@ -11,6 +11,14 @@ from datetime import date, datetime
 
 # print(grouped_words)
 
-today = datetime(year=2023, month=6, day=1)
-future_year = today.month / 12
-print(int(future_year))
+today = date.today()
+sunday = 6 - today.weekday() % 6
+date_sunday = date(today.year, today.month, today.day + sunday)
+print(date_sunday)
+days = []
+for day in range(today.weekday(), date_sunday.weekday()):
+    
+    day = date(today.year, today.month, today.day + day).strftime('%A')
+    days.append(day)
+
+print(days)
