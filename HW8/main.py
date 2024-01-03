@@ -14,10 +14,10 @@ from datetime import date, datetime
 today = date.today()
 sunday = 6 - today.weekday() % 6
 date_sunday = date(today.year, today.month, today.day + sunday)
+print(sunday)
 print(date_sunday)
 days = []
 for day in range(today.weekday(), date_sunday.weekday()):
-    
     day = date(today.year, today.month, today.day + day).strftime('%A')
     days.append(day)
 
