@@ -17,8 +17,9 @@ date_sunday = date(today.year, today.month, today.day + sunday)
 print(sunday)
 print(date_sunday)
 days = []
-for day in range(today.weekday(), date_sunday.weekday()):
-    day = date(today.year, today.month, today.day + day).strftime('%A')
+for day in range(today.weekday(), date_sunday.weekday() + 1):
+    day = date(today.year, today.month, day + 1).strftime('%A')
+    print(date_sunday.weekday())
     days.append(day)
 
 print(days)
