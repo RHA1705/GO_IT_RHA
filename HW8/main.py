@@ -11,7 +11,7 @@ from datetime import date, datetime
 
 # print(grouped_words)
 
-today = date.today()
+today = date(2024, 1, 10)
 sunday = 6 - today.weekday() % 6
 date_sunday = date(today.year, today.month, today.day + sunday)
 print(sunday)
