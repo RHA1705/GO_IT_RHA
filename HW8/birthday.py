@@ -26,7 +26,6 @@ def get_birthdays_per_week(users):
     print(week_birthdays)
     # return users
 
-
 if __name__ == "__main__":
     users = [
         {"name": "Jan Koum", 
