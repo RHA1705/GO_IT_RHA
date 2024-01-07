@@ -10,8 +10,8 @@ from datetime import date, datetime
 #     grouped_words[char].append(word)
 
 # print(grouped_words)
-
-today = date(2024, 1, 10)
+-
+today = date.today()
 sunday = 6 - today.weekday() % 6
 date_sunday = date(today.year, today.month, today.day + sunday)
 print(sunday)

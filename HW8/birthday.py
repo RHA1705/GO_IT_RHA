@@ -3,20 +3,27 @@ from datetime import date, datetime
 
 def get_birthdays_per_week(users):
     # Реалізуйте тут домашнє завдання
+    week_birthdays = {}
     for user in users:
-        
         user_name = user['name'].split()[0]
-        weekday_birth = user['birthday'].strftime('%A')
-        users = {}
-        if weekday_birth not in users:
-            users[weekday_birth] = []
-        users[weekday_birth].append(user_name)
-        
-    first_day = datetime(year=2023, month=12, day=31)
-    last_day = (6 - first_day.weekday()) + first_day.weekday()
+        birthday = user['birthday']
+        weekday_birth = birthday.strftime('%A')
+        print(user_name, weekday_birth)
+        today = date(2024, 1, 8)
+        sunday = 6 - today.weekday()
+        date_sunday = date(today.year, today.month, today.day + sunday)
+        days = []
+        names = []
+        for day in range(today.weekday(), date_sunday.weekday() + 1):
+            day = date(today.year, today.month, day + 1).strftime('%A')
+            print(date_sunday.weekday())
+            days.append(day)
+            if weekday_birth == day:
+                names.append(user_name)
+                week_birthdays.update({day : names})
+        print(days)
     
-    
-    print(first_day, last_day)
+    print(week_birthdays)
     # return users
 
 
@@ -24,6 +31,12 @@ if __name__ == "__main__":
     users = [
         {"name": "Jan Koum", 
          "birthday": datetime(1976, 1, 1).date()},
+        {"name": "Roman Harbazh", 
+         "birthday": datetime(2024, 1, 7).date()},
+        {"name": "Olenka Harbazh", 
+         "birthday": datetime(2024, 1, 10).date()},
+        {"name": "Sofia Harbazh", 
+         "birthday": datetime(2024, 1, 10).date()}
     ]
 
     # result = get_birthdays_per_week(users)
