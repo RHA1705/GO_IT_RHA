@@ -8,7 +8,7 @@ def get_birthdays_per_week(users):
         user_name = user['name'].split()[0]
         birthday = user['birthday']
         weekday_birth = birthday.strftime('%A')
-        print(user_name, weekday_birth)
+        # print(user_name, weekday_birth)
         today = date(2024, 1, 8)
         sunday = 6 - today.weekday()
         date_sunday = date(today.year, today.month, today.day + sunday)
@@ -16,15 +16,18 @@ def get_birthdays_per_week(users):
         names = []
         for day in range(today.weekday(), date_sunday.weekday() + 1):
             day = date(today.year, today.month, day + 1).strftime('%A')
-            print(date_sunday.weekday())
+            # print(date_sunday.weekday())
             days.append(day)
             if weekday_birth == day:
-                names.append(user_name)
-                week_birthdays.update({day : names})
-        print(days)
+                if day not in week_birthdays:
+                    names.append(user_name)  
+                    week_birthdays.update({day : names})  
+                else:
+                    week_birthdays.get(day).append(user_name)
+        # print(days)
     
-    print(week_birthdays)
-    # return users
+    # print(week_birthdays)
+    return week_birthdays
 
 if __name__ == "__main__":
     users = [
