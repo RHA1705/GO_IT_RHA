@@ -50,10 +50,19 @@
 # print(data_preparation([[1,2,3], [3,4], [5,6]]))
 
 '''Task Nr 8'''
-import re
+# import re
 
-def token_parser(s):
-    token = re.findall(r'\d+|\+|\-|\/|\*|\(|\)', s)
-    return token
+# def token_parser(s):
+#     token = re.findall(r'\d+|\+|\-|\/|\*|\(|\)', s)
+#     return token
 
-print(token_parser('123 + asde -  12345'))
+# print(token_parser('123 + asde -  12345'))
+
+'''Task Nr 9'''
+def all_sub_lists(data):
+    sublists = [[]]  # Починаємо з порожнього підсписку
+    for i in range(len(data)):
+        for j in range(i + 1, len(data) + 1):
+            sublists.append(data[i:j])    
+    return sublists
+print(all_sub_lists([1, 2, 3]))
