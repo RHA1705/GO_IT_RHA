@@ -63,6 +63,7 @@ def all_sub_lists(data):
     sublists = [[]]  # Починаємо з порожнього підсписку
     for i in range(len(data)):
         for j in range(i + 1, len(data) + 1):
-            sublists.append(data[i:j])    
+            sublists.append(data[i:j])
+    sublists = sorted(sublists, key=len)
     return sublists
 print(all_sub_lists([1, 2, 3]))
