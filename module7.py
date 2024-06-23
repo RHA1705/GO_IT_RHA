@@ -42,7 +42,7 @@
 #             if len(l) > 2:
 #                 l.remove(l_max)
 #                 l.remove(l_min)
-#             for i in l:
+#   *          for i in l:
 #                 result.append(i)
 #     result.sort(reverse=True)
 #     return result
@@ -63,6 +63,7 @@ def all_sub_lists(data):
     sublists = [[]]  # Починаємо з порожнього підсписку
     for i in range(len(data)):
         for j in range(i + 1, len(data) + 1):
-            sublists.append(data[i:j])    
+            sublists.append(data[i:j])
+    sublists = sorted(sublists, key=len)
     return sublists
 print(all_sub_lists([1, 2, 3]))
