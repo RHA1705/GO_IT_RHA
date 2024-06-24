@@ -21,5 +21,18 @@ from abc import ABC, abstractmethod, ABCMeta
 #     p = System()
 #     p1 = SystemAbs()
 
-class CommunicationDevice
+class CommunicationDevice(ABC):
+    @abstractmethod
+    def send_message(self):
+        pass
+    
+    @abstractmethod
+    def call(self):
+        pass
+    
+    @abstractmethod
+    def browsing(self):
+        pass
+    
+c_device = CommunicationDevice()
 
