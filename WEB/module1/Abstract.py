@@ -25,14 +25,46 @@ class CommunicationDevice(ABC):
     @abstractmethod
     def send_message(self):
         pass
-    
+
     @abstractmethod
     def call(self):
         pass
-    
+
     @abstractmethod
     def browsing(self):
         pass
-    
-c_device = CommunicationDevice()
 
+class DeviceWithCall(ABC):
+    @abstractmethod
+    def call(self):
+        pass
+
+class DeviceWithBrowsing(ABC):
+    @abstractmethod
+    def browsing(self):
+        pass
+
+class DeviceWithMessage(ABC):
+    @abstractmethod
+    def send_message(self):
+        pass
+class SmartPhone(DeviceWithBrowsing, DeviceWithCall, DeviceWithMessage):
+    def send_message(self):
+        return "Send Message"
+
+    def call(self):
+        return "Call"
+
+    def browsing(self):
+        return "Go to Google"
+
+class DiscPhone(DeviceWithCall):
+    def call(self):
+        return "Call on disc phone"
+
+dp = DiscPhone()
+print(dp.call())
+
+sm = SmartPhone()
+print(sm.call())
+print(sm.send_message())
