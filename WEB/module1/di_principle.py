@@ -34,7 +34,7 @@ def pretty_view(data):
 
 if __name__ == '__main__':
     api_client = ApiClient(RequestConnection(requests))
-    
+
     data = api_client.get_data('https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=11')
     pretty_view(data_adapter(data))
 
