@@ -37,4 +37,4 @@ if __name__ == '__main__':
 
     data = api_client.get_data('https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=11')
     pretty_view(data_adapter(data))
-
+    
