@@ -8,7 +8,11 @@ def master_th(con: Condition):
     sleep(1)
     with con:
         logger.debug('Ще працюйте!')
-        con.notify_all()
+        # con.notify_all()
+        con.notify()
+        sleep(2)
+        logger.debug('Ще працюйте!')
+        con.notify()
 
 
 def worker(con: Condition):
