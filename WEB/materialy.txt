@@ -1,0 +1,4 @@
+1. Repo V.Dunkin - https://github.com/Dunkin-Python-GoIt
+2. Module 3 - https://codechick.io/tutorials/python/python-threading, https://devzone.org.ua/post/bahatopotokovist-v-python
+
+C:/User0/sROMAN/Repositories/GO_IT_RHA/WEB/threads
