@@ -5,7 +5,7 @@ from logger import logger
 
 def worker_timeout(event: Event, time: float):
     while not event.is_set():
-        logger.debug('Чекаємо поки прапорець event не буде встановлений')
+        logger.debug('Чекаємо поки прапорець event буде встановлений')
         e_wait = event.wait(time)
         if e_wait:
             logger.debug('Починаємо виконувати якусь роботу')
