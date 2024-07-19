@@ -24,13 +24,13 @@ students = [
 
 def save_applicant_data(source, output):
     with open(output, 'w') as output_file:
-            # Iterating over the keys of the first applicant to write the header
-            # header = ",".join(source[0].keys()) + "\n"
-            # output_file.write(header)
+        # Iterating over the keys of the first applicant to write the header
+        # header = ",".join(source[0].keys()) + "\n"
+        # output_file.write(header)
 
-            # Iterating over each applicant and writing their data to the file
-            for applicant in source:
-                line = ",".join(str(applicant[key]) for key in applicant.keys()) + "\n"
-                output_file.write(line)
+        # Iterating over each applicant and writing their data to the file
+        for applicant in source:
+            line = ",".join(str(applicant[key]) for key in applicant.keys()) + "\n"
+            output_file.write(line)
 
 print(save_applicant_data(students, 'output.txt'))
