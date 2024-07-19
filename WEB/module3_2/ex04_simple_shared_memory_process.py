@@ -22,13 +22,20 @@ def worker(val: Value):
 if __name__ == '__main__':
     lock = RLock()
     value = Value('d', 0, lock=lock)
-    pr1 = Process(target=worker, args=(value, ))
-    pr1.start()
-    pr2 = Process(target=worker, args=(value, ))
-    pr2.start()
+    prs = []
+    for _ in range(5):
+        pr = Process(target=worker, args=(value, ))
+        prs.append(pr)
+        pr.start()
+    # pr1 = Process(target=worker, args=(value, ))
+    # pr1.start()
+    # pr2 = Process(target=worker, args=(value, ))
+    # pr2.start()
 
-    pr1.join()
-    pr2.join()
+    # pr1.join()
+    # pr2.join()
+    
+    [pr.join() for pr in prs]
 
     print(value.value)
     

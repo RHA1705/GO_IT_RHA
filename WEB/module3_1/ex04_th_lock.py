@@ -24,5 +24,5 @@ if __name__ == '__main__':
     for i in range(5):
         th = Thread(name=f"Th#{i}", target=worker)
         th.start()
-    
+
     logger.debug('End program')
