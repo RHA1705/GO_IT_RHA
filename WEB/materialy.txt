@@ -1,5 +1,6 @@
 1. Repo V.Dunkin - https://github.com/Dunkin-Python-GoIt
-2. Module 3 - https://codechick.io/tutorials/python/python-threading, https://devzone.org.ua/post/bahatopotokovist-v-python
+2. Module 3 - https://codechick.io/tutorials/python/python-threading
+              https://devzone.org.ua/post/bahatopotokovist-v-python
 3. HW10 - https://youtu.be/_ogIt9n61fU
           https://youtu.be/uZCLloUDaNI
           https://youtu.be/mkw0SLBic0Q
@@ -15,3 +16,7 @@
                              https://medium.com/indigoag-eng/profiling-orm-in-fastapi-d8f616b90aa2
 
 C:/User/ROMAN/Repositories/GO_IT_RHA/WEB/threads
+
+8. WEB-Scraping - https://www.scrapingbee.com/blog/web-scraping-101-with-python/
+                  https://realpython.com/beautiful-soup-web-scraper-python/
+9. Django -  https://docs.djangoproject.com/en/3.1/
