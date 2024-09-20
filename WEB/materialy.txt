@@ -1,4 +1,17 @@
 1. Repo V.Dunkin - https://github.com/Dunkin-Python-GoIt
 2. Module 3 - https://codechick.io/tutorials/python/python-threading, https://devzone.org.ua/post/bahatopotokovist-v-python
+3. HW10 - https://youtu.be/_ogIt9n61fU
+          https://youtu.be/uZCLloUDaNI
+          https://youtu.be/mkw0SLBic0Q
+4. HTTP response status codes - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+5. Authorisation and autentification - https://training.qatestlab.com/blog/technical-articles/authentication-authorization-and-identification/
+                                       https://ssl.com.ua/blog/ukr/what-are-cookies/  
+                                       https://www.freecodecamp.org/news/how-to-add-jwt-authentication-in-fastapi/
+6. Backend - https://fastapi.tiangolo.com/ru/tutorial/request-files/  
+             https://medium.com/fintechexplained/securing-fastapi-services-oauth2-9de727a3e79a
+7. Testing WEB Aplications - https://realpython.com/python-testing/ 
+                             https://realpython.com/pytest-python-testing/ 
+                             https://www.fastapitutorial.com/blog/unit-testing-in-fastapi/ 
+                             https://medium.com/indigoag-eng/profiling-orm-in-fastapi-d8f616b90aa2
 
-C:/User0/sROMAN/Repositories/GO_IT_RHA/WEB/threads
+C:/User/ROMAN/Repositories/GO_IT_RHA/WEB/threads
