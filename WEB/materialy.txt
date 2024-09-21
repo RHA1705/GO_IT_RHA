@@ -20,3 +20,5 @@ C:/User/ROMAN/Repositories/GO_IT_RHA/WEB/threads
 8. WEB-Scraping - https://www.scrapingbee.com/blog/web-scraping-101-with-python/
                   https://realpython.com/beautiful-soup-web-scraper-python/
 9. Django -  https://docs.djangoproject.com/en/3.1/
+
+AAAA
