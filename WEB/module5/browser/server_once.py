@@ -3,7 +3,7 @@ import websockets
 import platform
 
 
-async def handler(websocket, path):
+async def handler(websocket):
     data = await websocket.recv()
     reply = f"Data recieved as:  {data}!"
     print(reply)
