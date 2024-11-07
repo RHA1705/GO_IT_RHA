@@ -110,3 +110,32 @@ if __name__ == '__main__':
     print(employees)
     print(posts)
     insert_data_to_db(companies, employees, posts)
+
+
+
+def prepare_data(students, lecturers, groups, lectures) -> tuple():
+    '''prepare data for saving in database'''
+    for_students = []
+    for student in students:
+        for_students.append((student, ))
+
+    for_lecturers = []
+    for lecturer in lecturers:
+        for_lecturers.append((lecturer, ))
+
+    for_groups = []
+    for group in range(1, students + 1):
+        for_groups.append((randint(1, groups), group))
+
+    for_lectures = []
+    for lecture in lectures:
+        for_lectures.append((lecture, choice(lecturers)))
+
+    for_grades = []
+    for _ in range(20):
+        grade_date = datetime(2023, randint(1, 12), randint(1, 28)).date()
+        for student in range(1, students+1):
+            # Pętla za ilością studentów
+            for_grades.append((randint(3, 5), randint(1, 5), student, grade_date))
+
+    return for_students, for_lecturers, for_groups, for_lectures, for_grades
