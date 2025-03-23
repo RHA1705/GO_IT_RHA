@@ -1,4 +1,4 @@
-a = 10
-b = 2
-result = a % b
+a = 140
+b = 5.49
+result = a * b
 print(result)

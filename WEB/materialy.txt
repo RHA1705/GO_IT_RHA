@@ -21,4 +21,7 @@ C:/User/ROMAN/Repositories/GO_IT_RHA/WEB/threads
                   https://realpython.com/beautiful-soup-web-scraper-python/
 9. Django -  https://docs.djangoproject.com/en/3.1/
 
-AAAA
+# https://bulldogjob.pl/readme/samouczek-regex-sciagawka-z-przykladami
+# https://docs.python.org/3/library/re.html
+# https://ggoralski.gitlab.io/python-wprowadzenie/czesc_ii/2_01-regex/
+# https://habr.com/ru/articles/349860/

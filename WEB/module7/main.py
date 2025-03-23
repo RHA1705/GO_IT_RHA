@@ -2,7 +2,7 @@
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, ForeignKey
 from sqlalchemy.sql import select
 
-engine = create_engine('sqlite:///:memory:', echo=True)
+engine = create_engine('sqlite:///:memory:', echo=False)
 """Робота з ORM починається зі створення об'єкта, що інкапсулює доступ до бази даних, 
 в SQLAlchemy він називається engine. У цьому прикладі ми використовуємо SQLite базу даних у пам'яті,
 на диск нічого не записується."""
